@@ -1,0 +1,29 @@
+x=input("1_Search contacts\n2_Add contacts\n:")
+if x=="2":
+    file=open("contacts.txt","a")
+    name=input("name ?:")
+    phone=input("number ?:")
+    file.write(f"{name}:{phone}\n")
+    file.close()
+elif x=="1":
+        c=input("3_Find a contacts\n4_Show all contacts\n:")
+        import os
+        if c=="4":
+            if os.path.exists("contacts.txt"):
+                
+                file=open("contacts.txt","r")
+                content=file.read()
+                print(content)  
+            else :
+                    print("No")
+        elif c=="3":
+            s=input("what name ?\n:")
+            for line in open("contacts.txt","r"):
+                parts=line.split(":")
+                if s==parts[0]:
+                    print(parts[1])
+        else:
+            print("erreur")     
+      
+
+    
